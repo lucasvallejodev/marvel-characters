@@ -1,3 +1,4 @@
+import Typography from "../../ui/Typography/Typography";
 import FavoriteFilledIcon from "../../ui/icons/FavoriteFilledIcon";
 import FavoriteIcon from "../../ui/icons/FavoriteIcon";
 import "./HeroList.css";
@@ -15,7 +16,7 @@ const Item = ({ id, title, imgSrc, isFavorite, handleClick }: ItemProps) => {
     <div className="hero-list-item" id={`hero-list-item-${id}`} onClick={handleClick}>
       <img src={imgSrc} alt={title} />
       <button>
-        <p>{title}</p>
+        <Typography color="secondary" size="sm">{title}</Typography>
         {
           isFavorite ?
             <FavoriteFilledIcon /> :

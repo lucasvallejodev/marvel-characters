@@ -10,13 +10,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <HeroListPage />,
-        loader: heroLoader,
+        element: <HeroListPage />
       },
       {
-        path: "/heroes",
-        element: <HeroListPage />,
-        loader: heroLoader,
+        path: "/favorites",
+        element: <HeroListPage isFavoritePage />
       },
       {
         path: "/heroes/:heroId",

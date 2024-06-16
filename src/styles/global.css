@@ -1,10 +1,36 @@
 @import "fonts.css";
 @import "modifiers.css";
 
+/* global variables*/
 :root {
  font-family: 'Roboto Condensed', sans-serif;
+
+  --color-primary: #000000;
+  --color-secondary: #ffffff;
+  --color-tertiary: #AAAAAA;
+  
+  --color-red: #FF0000;
+
+  --table-breakpoint: 834px;
+  --mobile-breakpoint: 480px;
+
+  --font-size-h1: 2.5rem;
+  --font-size-h1-tablet: 2rem;
+
+  --font-size-h2: 2rem;
+  --font-size-h2-tablet: 1.5rem; 
+
+  --font-size-p: 1rem;
+  --font-size-p-sm: 0.75rem;
+
+  --font-size-span: 1rem;
+  --font-size-span-sm: 0.875rem;
+
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
 }
 
+/* reset body css */
 body {
  margin: 0;
 }
@@ -20,8 +46,23 @@ button {
   outline: inherit;
 }
 
+/* remove default input styles */
+input {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
+
 /* global css */
 
 .container {
   margin: 48px;
+
+  @media only screen and (max-width: 480px) {
+    margin: 16px;
+  }
 }

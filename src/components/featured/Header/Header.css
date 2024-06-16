@@ -3,4 +3,8 @@
   background: black;
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 480px) {
+    padding: 16px;
+  }
 }

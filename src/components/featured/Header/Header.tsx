@@ -3,16 +3,18 @@ import Logo from "../../ui/icons/LogoIcon";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 type HeaderProps = {
-  handleClick: () => void;
+  handleLogoClick: () => void;
+  handleFavoriteClick: () => void;
+  favoriteCount: number;
 }
 
-const Header = ({ handleClick}: HeaderProps) => {
+const Header = ({ handleLogoClick, handleFavoriteClick, favoriteCount }: HeaderProps) => {
   return (
     <div className="header">
-      <div onClick={handleClick}>
+      <div onClick={handleLogoClick}>
         <Logo className="cursor-pointer" />
       </div>
-      <FavoriteButton count={3} hasFavorite={true} handleClick={() => null} />
+      <FavoriteButton count={favoriteCount} hasFavorite={!!favoriteCount} handleClick={handleFavoriteClick} />
     </div>
   );
 }

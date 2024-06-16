@@ -1,6 +1,7 @@
 import "./FavoriteButton.css";
 import FavoriteFilledIcon from "../../ui/icons/FavoriteFilledIcon";
 import FavoriteIcon from "../../ui/icons/FavoriteIcon";
+import Typography from "../../ui/Typography/Typography";
 
 const BUTTON_HEIGHT = 22;
 const BUTTON_WIDTH = 24;
@@ -19,7 +20,7 @@ const FavoriteButton = ({ hasFavorite, handleClick, count }: FavoriteButtonProps
           <FavoriteFilledIcon height={BUTTON_HEIGHT} width={BUTTON_WIDTH} /> :
           <FavoriteIcon  height={BUTTON_HEIGHT} width={BUTTON_WIDTH} />
       }
-      {!!count && <span>{count}</span>}
+      {!!count && <Typography type="span" color="secondary">{count}</Typography>}
     </button>
   );
 }
