@@ -1,4 +1,5 @@
 import axios, { AxiosResponse } from "axios";
+import heroesJsonMock from "../../mocks/heroes-response.json";
 import { ApiResponse, DataResponse, Hero } from "../../types";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -19,6 +20,8 @@ const getHeroesFromResponse = (response: HeroResponse): Hero[] => {
   
 
 export const fetchHeroes = async () => {
+  const heroesMock = JSON.parse(JSON.stringify(heroesJsonMock)) as ApiResponse<DataResponse<Hero>>;
+  return heroesMock.data.results;
   try {
     const result = await axios.get<null, HeroResponse>(`${BASE_URL}/characters?apikey=${API_KEY}`);
     return getHeroesFromResponse(result);

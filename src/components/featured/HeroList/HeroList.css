@@ -1,0 +1,44 @@
+.hero-list {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-list-item {
+  height: 245px;
+  width: 188px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 95% 100%, 100% 95%);
+  clip-path: polygon(100% 0, 0 0, 0 100%, 95% 100%, 100% 95%);
+}
+
+.hero-list-item img {
+ height: 189px;
+ width: 100%;
+ object-fit: cover;
+}
+
+.hero-list-item button {
+  height: 56px;
+  width: 100%;
+  padding: 16px;
+  padding-bottom: 24px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-top: 5px solid red;
+  
+	color: white;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.hero-list-item button p {
+  font-size: 0.875rem;
+}

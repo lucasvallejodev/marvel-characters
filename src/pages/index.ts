@@ -1,5 +1,5 @@
 import ErrorPage from "./Error/Error";
-import HomePage from "./Home/Home";
+import HeroListPage from "./HeroList/HeroList";
 import HeroPage from "./Hero/Hero";
 import { heroLoader } from "./Hero/heroLoader";
 import NotFoundPage from "./NotFound/NotFound";
@@ -9,7 +9,7 @@ export {
   ErrorPage,
   NotFoundPage,
   RootLayout,
-  HomePage,
+  HeroListPage,
   HeroPage,
   heroLoader,
 }

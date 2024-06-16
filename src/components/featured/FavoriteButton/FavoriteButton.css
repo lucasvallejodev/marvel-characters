@@ -1,0 +1,10 @@
+.favorite-button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.favorite-button span {
+  color: white;
+  font-size: 1rem;
+}
