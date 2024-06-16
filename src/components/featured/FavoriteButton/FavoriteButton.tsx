@@ -8,7 +8,7 @@ const BUTTON_WIDTH = 24;
 
 type FavoriteButtonProps = {
   hasFavorite: boolean;
-  count: number;
+  count?: number;
   handleClick: () => void;
 };
 
