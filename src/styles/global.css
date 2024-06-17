@@ -18,7 +18,9 @@
   --font-size-h1-tablet: 2rem;
 
   --font-size-h2: 2rem;
-  --font-size-h2-tablet: 1.5rem; 
+  --font-size-h2-tablet: 1.5rem;
+
+  --font-size-h3: 1rem;
 
   --font-size-p: 1rem;
   --font-size-p-sm: 0.75rem;
@@ -27,6 +29,7 @@
   --font-size-span-sm: 0.875rem;
 
   --font-weight-bold: 700;
+  --font-weight-semibold: 500;
   --font-weight-normal: 400;
 }
 
@@ -44,6 +47,11 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+}
+
+/* remove default margin from headings and paragraphs */
+h1, h2, h3, p {
+  margin: 0;
 }
 
 /* remove default input styles */

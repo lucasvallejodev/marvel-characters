@@ -1,14 +1,16 @@
-import { LoadingBar } from "../../components";
+import { ComicList, LoadingBar } from "../../components";
 import HeroHeader from "../../components/featured/HeroHeader/HeroHeader";
 import useHero from "./useHero";
 
 const HeroPage = () => {
   const { 
     isLoading,
-    data,
+    hero,
+    comics,
     isFavorite,
     setFavorite,
     removeFavorite,
+    getYearFromComicName,
   } = useHero();
 
   return (
@@ -18,14 +20,30 @@ const HeroPage = () => {
         <LoadingBar />
       }
       {
-        data && (
-          <HeroHeader
-            imgSrc={`${data.thumbnail.path}.${data.thumbnail.extension}`}
-            title={data.name}
-            description={data.description}
-            isFavorite={isFavorite}
-            handleFavoriteClick={() => isFavorite ? removeFavorite(data.id) : setFavorite(data)}
-          />
+        hero && (
+          <>
+            <HeroHeader
+              imgSrc={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
+              title={hero.name}
+              description={hero.description}
+              isFavorite={isFavorite}
+              handleFavoriteClick={() => isFavorite ? removeFavorite(hero.id) : setFavorite(hero)}
+            />
+            {
+              !!comics.length &&
+              <ComicList>
+                {comics.map((comic) => (
+                  <ComicList.Item
+                    key={`comic-${comic.id}`}
+                    id={`comic-${comic.id}`}
+                    title={comic.title}
+                    year={getYearFromComicName(comic.title)}
+                    imgSrc={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}
+                  />
+                ))}
+              </ComicList>
+            }
+          </>
         )
       }
     </>

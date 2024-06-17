@@ -19,7 +19,10 @@ const HeroHeader = ({ imgSrc, title, description, isFavorite, handleFavoriteClic
         <FavoriteButton hasFavorite={isFavorite} handleClick={handleFavoriteClick} />
       </div>
       <Typography color="secondary">{description}</Typography>
-    </div> 
+    </div>
+    <div className="hero-header__cut-corner-container">
+      <div className="hero-header__cut-corner"></div>
+    </div>
   </div>
 );
 

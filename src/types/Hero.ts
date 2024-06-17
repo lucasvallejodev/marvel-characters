@@ -1,7 +1,4 @@
-type Image = {
-  path: string;
-  extension: string;
-}
+import { Image } from './shared';
 
 type Item = {
   resourceURI: string;

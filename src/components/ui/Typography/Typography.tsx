@@ -1,7 +1,7 @@
 import "./Typography.css";
 
 type TypographyProps = {
-  type?: "h1" | "h2" | "p" | "span";
+  type?: "h1" | "h2" | "h3" | "p" | "span";
   children: React.ReactNode;
   className?: string;
   color?: "primary" | "secondary";
@@ -14,6 +14,10 @@ const H1 = ({ children, className, color }: TypographyProps) => (
 
 const H2 = ({ children, className, color }: TypographyProps) => (
   <h2 className={`typography-h2 typography-h2__${color} ${className}`}>{children}</h2>
+);
+
+const H3 = ({ children, className, color }: TypographyProps) => (
+  <h3 className={`typography-h3 typography-h3__${color} ${className}`}>{children}</h3>
 );
 
 const P = ({ children, className, color, size = "md" }: TypographyProps) => (
@@ -32,6 +36,8 @@ const Typography = ({ type, children, className, size, color }: TypographyProps)
       return <H1 className={tClass} color={tColor}>{children}</H1>;
     case "h2":
       return <H2 className={tClass} color={tColor}>{children}</H2>;
+    case "h3":
+      return <H3 className={tClass} color={tColor}>{children}</H3>;
     case "span":
       return <Span className={tClass} color={tColor} size={size}>{children}</Span>;
     default:

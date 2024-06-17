@@ -1,6 +1,6 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { RootContextType } from "../Layouts/RootLayout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useDebounce from "../../hooks/useDebounce";
 import { useQuery } from "@tanstack/react-query";
 import { fetchHeroes } from "../../services/api/api";
@@ -8,6 +8,7 @@ import { fetchHeroes } from "../../services/api/api";
 const useHeroList = (isFavoritePage?: boolean) => {
   const navigate = useNavigate();
   const { checkFavorite, favorites } = useOutletContext<RootContextType>();
+  const [filteredFavorites, setFilteredFavorites] = useState(favorites);
 
   const [searchTerm, setSearchTerm] = useState('');
   const debouncedValue = useDebounce(searchTerm);
@@ -17,6 +18,15 @@ const useHeroList = (isFavoritePage?: boolean) => {
     queryFn:() => fetchHeroes(debouncedValue),
     enabled: !isFavoritePage,
   });
+
+  useEffect(() => {
+    if (isFavoritePage) {
+      setFilteredFavorites(
+        favorites.filter((hero) => hero.name.toLowerCase().includes(debouncedValue.toLowerCase()))
+      );
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [favorites, debouncedValue]);
   
   const goToHeroDetails = (heroId: number) => {
     navigate(`/heroes/${heroId}`);
@@ -24,8 +34,8 @@ const useHeroList = (isFavoritePage?: boolean) => {
 
   return {
     goToHeroDetails,
-    heroes: isFavoritePage ? favorites : data?.results || [],
-    heroesCount: isFavoritePage ? favorites.length : data?.results.length || 0,
+    heroes: isFavoritePage ? filteredFavorites : data?.results || [],
+    heroesCount: isFavoritePage ? filteredFavorites.length : data?.results.length || 0,
     checkFavorite,
     isLoading,
     data,

@@ -23,7 +23,7 @@ const HeroListPage = ({ isFavoritePage }: HeroListPageProps) => {
       }
       <div className="container">
         {
-          isFavoritePage && <Typography type="h2">Favorites</Typography>
+          isFavoritePage && <Typography type="h2" className="mb-4">Favorites</Typography>
         }
         <SearchInput count={heroesCount} onChange={setSearchTerm} />
         <HeroList>

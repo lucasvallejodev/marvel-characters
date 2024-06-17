@@ -7,11 +7,13 @@ import FavoriteButton from "./featured/FavoriteButton/FavoriteButton";
 import Typography from "./ui/Typography/Typography";
 import SearchInput from "./featured/SearchInput/SearchInput";
 import LoadingBar from "./ui/LoadingBar/LoadingBar";
+import ComicList from "./featured/ComicList/ComicList";
 
 export {
   Header,
   Logo,
   HeroList,
+  ComicList,
   FavoriteIcon,
   FavoriteFilledIcon,
   FavoriteButton,
