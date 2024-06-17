@@ -27,7 +27,7 @@ To set up the project, follow these steps:
 > [!NOTE]
 > This projects uses an external API called (Developer Marvel)[https://developer.marvel.com/documentation/getting_started]. Use the link to set up your account and get your `API_KEY`.
 
-## Environment Variables
+## :closed_lock_with_key: Environment Variables
 
 This project uses environment variables to manage sensitive data. Create a `.env.development` file in the root directory of the project and add the following variables:
 
@@ -38,14 +38,14 @@ VITE_API_KEY=your_api_key
 ```
 You can use `.env.example` as reference.
 
-## Testing
+## :test_tube: Testing
 The project covers some basic testing for the page components and can be run using the following command:
 
 ```
 npm run test
 ```
 
-## Building
+## :hammer: Building
 To build the project, use the following command:
 
 ```
@@ -57,9 +57,11 @@ This will create a dist directory with the production-ready files.
 ## Some improvements that can be made
 - Use of lazy loading for images, in order to avoid some glitches when the component is rendered by not the image.
 - Use of a css pre-processor for helping with the use of CSS variables.
+- Improve the card responsiveness using the grid system to control the amount of cards that the list will display.
+- Test more in dept, using diferent types of mocks for different types of situations.
 
 ## Some used libraries
-- `react-query`: To manage cache and data fetching.
+- `@tanstack/react-query`: To manage cache and data fetching.
 - `react-router-dom`: Used for routing in the application.
 - `@testing-library/react`: Used for testing React components.
 - `vitest`: Used as the unit testing framework.
