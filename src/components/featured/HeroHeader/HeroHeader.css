@@ -36,7 +36,6 @@
 .hero-header__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
   width: 100%;
   justify-content: center;
@@ -45,7 +44,7 @@
   @media only screen and (max-width: 1280px) {
     padding: 0 48px;
     padding-right: 24px;
-    align-items: flex-start;
+    height: auto;
   }
 
   @media only screen and (max-width: 480px) {
