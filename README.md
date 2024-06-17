@@ -1,6 +1,18 @@
+![marvel](https://github.com/lucasvallejodev/marvel-characters/assets/97030519/a27fcdbc-8d46-44ca-9b76-a026a5f085cb)
+
 # Marvel Characters
 
 This is a simple project that displays a list of Marvel heroes and their details.
+
+## Hero list
+![image](https://github.com/lucasvallejodev/marvel-characters/assets/97030519/05d2a159-0159-442d-a278-3682a0591171)
+
+## Favorite List
+![image](https://github.com/lucasvallejodev/marvel-characters/assets/97030519/11daaf18-3849-46df-a5be-5bd92b370982)
+
+## Hero Detail
+![image](https://github.com/lucasvallejodev/marvel-characters/assets/97030519/b8d37219-3652-48d2-92c6-59d4163cb073)
+
 
 ## Setup
 
