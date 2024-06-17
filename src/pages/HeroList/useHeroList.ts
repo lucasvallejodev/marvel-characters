@@ -5,7 +5,7 @@ import useDebounce from "../../hooks/useDebounce";
 import { useQuery } from "@tanstack/react-query";
 import { fetchHeroes } from "../../services/api/api";
 
-const useHeroList = (isFavoritePage?: boolean) => {
+export const useHeroList = (isFavoritePage?: boolean) => {
   const navigate = useNavigate();
   const { checkFavorite, favorites } = useOutletContext<RootContextType>();
   const [filteredFavorites, setFilteredFavorites] = useState(favorites);
@@ -42,5 +42,3 @@ const useHeroList = (isFavoritePage?: boolean) => {
     setSearchTerm,
   }
 }
-
-export default useHeroList;

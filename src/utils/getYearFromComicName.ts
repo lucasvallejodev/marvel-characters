@@ -1,0 +1,1 @@
+export const getYearFromComicName = (name: string) => name.match(/\((\d{4})\)/)?.[1] || "";

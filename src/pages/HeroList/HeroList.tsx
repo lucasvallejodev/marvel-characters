@@ -1,5 +1,5 @@
 import { HeroList, LoadingBar, SearchInput, Typography } from "../../components";
-import useHeroList from "./useHeroList";
+import { useHeroList } from "./useHeroList";
 
 type HeroListPageProps = {
   isFavoritePage?: boolean;

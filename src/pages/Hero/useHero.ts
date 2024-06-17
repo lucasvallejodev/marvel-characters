@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchHero, getComicByHero } from "../../services/api/api";
 import { RootContextType } from "../Layouts/RootLayout";
 
-const useHero = () => {
+export const useHero = () => {
   const { heroId } = useLoaderData() as HeroLoaderData;
   const { isLoading, data } = useQuery({
     queryKey: ['hero', heroId],
@@ -15,8 +15,6 @@ const useHero = () => {
   const { checkFavorite, setFavorite, removeFavorite } = useOutletContext<RootContextType>();
   const isFavorite = checkFavorite(hero?.id || 0);
 
-  const getYearFromComicName = (name: string) => name.match(/\((\d{4})\)/)?.[1] || "";
-
   return {
     isLoading,
     hero,
@@ -24,8 +22,5 @@ const useHero = () => {
     isFavorite,
     setFavorite,
     removeFavorite,
-    getYearFromComicName,
   }
 }
-
-export default useHero;

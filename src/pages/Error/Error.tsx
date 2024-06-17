@@ -1,7 +1,7 @@
 import { useRouteError } from "react-router-dom";
 import { Typography } from "../../components";
 
-export default function ErrorPage() {
+const ErrorPage = () => {
   const error = useRouteError();
   const errorMessage = (error as Error)?.message || (error as { statusText?: string })?.statusText;
 
@@ -15,3 +15,5 @@ export default function ErrorPage() {
     </div>
   );
 }
+
+export default ErrorPage;

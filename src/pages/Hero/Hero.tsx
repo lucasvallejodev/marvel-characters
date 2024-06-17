@@ -1,6 +1,7 @@
 import { ComicList, LoadingBar } from "../../components";
 import HeroHeader from "../../components/featured/HeroHeader/HeroHeader";
-import useHero from "./useHero";
+import { getYearFromComicName } from "../../utils/getYearFromComicName";
+import { useHero } from "./useHero";
 
 const HeroPage = () => {
   const { 
@@ -10,7 +11,6 @@ const HeroPage = () => {
     isFavorite,
     setFavorite,
     removeFavorite,
-    getYearFromComicName,
   } = useHero();
 
   return (
