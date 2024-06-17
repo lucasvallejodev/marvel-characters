@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router-dom";
+import { Typography } from "../../components";
 
 export default function ErrorPage() {
   const error = useRouteError();
@@ -6,11 +7,11 @@ export default function ErrorPage() {
 
   return (
     <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
+      <Typography type="h1">Oops!</Typography>
+      <Typography>Sorry, an unexpected error has occurred.</Typography>
+      <Typography>
         <i>{errorMessage}</i>
-      </p>
+      </Typography>
     </div>
   );
 }
